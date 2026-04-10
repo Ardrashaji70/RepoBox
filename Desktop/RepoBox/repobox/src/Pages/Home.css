@@ -1,0 +1,588 @@
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; }
+
+.app { 
+    min-height: 100vh; 
+    background: #f0fdf4; 
+    font-family: 'DM Sans', 'Segoe UI',
+     sans-serif; 
+    }
+
+.container { display: flex; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 2rem 1rem; 
+    gap: 1.5rem; 
+}
+
+.sidebar { 
+    width: 210px; 
+    flex-shrink: 0; 
+    background: #0a0a0a; 
+    border-radius: 14px; 
+    padding: 1.5rem 1rem; 
+    height: fit-content; 
+}
+
+.sidebar h3 { 
+    color: #f0fdf4; 
+    font-size: 0.95rem; 
+    font-weight: 500; 
+    margin-bottom: 0.25rem; 
+}
+
+.repoCount { 
+    color: #6b7280; 
+    font-size: 0.78rem; 
+    margin-bottom: 1rem;
+ }
+
+.sidebar button {
+     width: 100%; 
+     padding: 0.65rem 1rem; 
+     background: #22c55e; 
+     border: none; 
+     border-radius: 8px; 
+     color: #0a0a0a; 
+     font-size: 0.88rem; 
+     font-weight: 600; 
+     cursor: pointer; 
+     font-family: inherit; 
+     transition: background 0.2s; 
+    }
+
+.sidebar button:hover { 
+    background: #16a34a; 
+}
+.sidebarLinks { 
+    margin-top: 1.25rem; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.6rem; 
+}
+
+.sidebarLinks span { 
+    color: rgba(240,253,244,0.6); 
+    font-size: 0.85rem; 
+    cursor: pointer; 
+    transition: color 0.2s; 
+    padding: 0.3rem 0.5rem; 
+    border-radius: 6px; 
+}
+
+.sidebarLinks span:hover { 
+    color: #22c55e; 
+    background: rgba(34,197,94,0.1); 
+}
+
+.main { 
+    flex: 1; 
+    min-width: 0; 
+}
+
+
+.mainHeader { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    margin-bottom: 1rem; 
+    flex-wrap: wrap; 
+    gap: 0.5rem; 
+}
+
+.mainHeader h3 { 
+    font-size: 1.3rem; 
+    font-weight: 600; 
+    color: #0a0a0a; 
+}
+
+.breadcrumb { 
+    color: #22c55e; 
+    cursor: pointer; 
+    font-size: 0.95rem; 
+    font-weight: 500; 
+}
+
+.breadcrumb:hover {
+     text-decoration: underline; 
+    }
+
+.breadcrumbSep { 
+    color: #9ca3af; 
+    margin: 0 0.25rem; 
+}
+
+.breadcrumbActive { 
+    color: #0a0a0a; 
+    font-size: 0.95rem; 
+    font-weight: 600; 
+}
+
+
+.newRepoBtn { 
+    padding: 0.45rem 1rem; 
+    background: #22c55e; 
+    border: none; 
+    border-radius: 8px; 
+    color: #0a0a0a; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+    font-family: inherit; 
+    transition: background 0.2s; 
+}
+
+.newRepoBtn:hover {
+     background: #16a34a; 
+}
+
+.searchInput { 
+    width: 100%; 
+    padding: 0.7rem 1rem; 
+    border: 1.5px solid #d1fae5; 
+    border-radius: 10px; 
+    font-size: 0.9rem; 
+    font-family: inherit; 
+    background: #fff; 
+    color: #111; 
+    outline: none; 
+    margin-bottom: 1.25rem; 
+    transition: border-color 0.2s; 
+}
+
+.searchInput:focus { 
+    border-color: #22c55e; 
+}
+
+.emptyState { 
+    text-align: center; 
+    padding: 4rem 0; 
+    color: #9ca3af; 
+}
+
+.emptyState p { 
+    font-size: 1.1rem; 
+    margin-bottom: 0.5rem; 
+}
+
+.emptyState span { 
+    font-size: 0.85rem; 
+}
+
+.card { 
+    background: #fff; 
+    border: 0.5px solid #d1fae5; 
+    border-radius: 12px; 
+    padding: 1.1rem 1.25rem; 
+    margin-bottom: 0.85rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 1rem; 
+    transition: border-color 0.2s, box-shadow 0.2s; 
+}
+
+.card:hover { 
+    border-color: #22c55e; 
+    box-shadow: 0 2px 12px rgba(34,197,94,0.08); 
+}
+
+.cardInfo { 
+    flex: 1; 
+    min-width: 0; 
+}
+
+.cardInfo h4 { 
+    font-size: 1rem; 
+    font-weight: 600; 
+    color: #22c55e; 
+    cursor: pointer; 
+    margin-bottom: 0.25rem; 
+}
+
+.cardInfo h4:hover { 
+    text-decoration: underline; 
+}
+
+.cardInfo p { 
+    font-size: 0.85rem; 
+    color: #6b7280; 
+    margin-bottom: 0.5rem; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+.cardMeta { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.6rem; 
+    flex-wrap: wrap;
+ }
+
+.langDot { 
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%; 
+    display: inline-block; 
+    flex-shrink: 0; 
+}
+
+.langName { 
+    font-size: 0.78rem; 
+    color: #374151; 
+}
+
+.cardDate { 
+    font-size: 0.75rem; 
+    color: #9ca3af; 
+}
+
+.cardActions { 
+    display: flex; 
+    gap: 0.5rem; 
+    flex-shrink: 0; 
+}
+
+.starBtn { 
+    padding: 0.4rem 0.6rem; 
+    background: transparent; 
+    border: 1px solid #d1fae5; 
+    border-radius: 8px; 
+    font-size: 0.85rem; 
+    cursor: pointer; 
+    transition: background 0.2s; 
+}
+
+.starBtn:hover { 
+    background: #f0fdf4; 
+}
+
+.openBtn { 
+    padding: 0.4rem 0.9rem; 
+    background: #22c55e; 
+    border: none; 
+    border-radius: 8px; 
+    color: #0a0a0a; 
+    font-size: 0.8rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+    font-family: inherit; 
+    transition: background 0.2s; 
+}
+
+.openBtn:hover { 
+    background: #16a34a; 
+}
+
+.deleteBtn { 
+    padding: 0.4rem 0.6rem; 
+    background: transparent; 
+    border: 1px solid #fecaca; 
+    border-radius: 8px; 
+    font-size: 0.85rem; 
+    cursor: pointer; 
+    transition: background 0.2s; 
+}
+
+.deleteBtn:hover { 
+    background: #fef2f2; 
+}
+
+.repoInfo { 
+    background: #fff; 
+    border: 0.5px solid #d1fae5; 
+    border-radius: 12px; 
+    padding: 1rem 1.25rem; 
+    margin-bottom: 1rem; 
+}
+
+.repoInfo p { 
+    color: #6b7280; 
+    font-size: 0.9rem; 
+    margin-bottom: 0.5rem; 
+}
+
+.uploadSection { 
+    background: #fff; 
+    border: 0.5px solid #d1fae5; 
+    border-radius: 12px; 
+    padding: 1.25rem; 
+    margin-bottom: 1rem; 
+}
+
+.uploadSection h4 { 
+    font-size: 0.95rem; 
+    font-weight: 600; 
+    color: #0a0a0a; 
+    margin-bottom: 0.85rem; 
+}
+
+.uploadRow { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.75rem; 
+    flex-wrap: wrap; 
+    margin-bottom: 0.75rem; 
+}
+
+.selectFolderBtn { 
+    padding: 0.55rem 1.1rem; 
+    background: #0a0a0a; 
+    border-radius: 8px; 
+    color: #f0fdf4; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: background 0.2s; 
+    white-space: nowrap; 
+    display: inline-block; 
+}
+
+.selectFolderBtn:hover { 
+    background: #1a1a1a; 
+}
+
+.fileCount { 
+    font-size: 0.82rem; 
+    color: #22c55e; 
+    font-weight: 500; 
+    white-space: nowrap; 
+}
+
+.uploadBtn { 
+    padding: 0.55rem 1.1rem; 
+    background: #22c55e; 
+    border: none; 
+    border-radius: 8px; 
+    color: #0a0a0a; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+    font-family: inherit; 
+    white-space: nowrap; 
+    transition: background 0.2s; 
+}
+
+.uploadBtn:hover { 
+    background: #16a34a; 
+}
+
+.uploadBtn:disabled { 
+    opacity: 0.5; 
+    cursor: not-allowed; 
+}
+
+.progressBar { 
+    width: 100%; 
+    background: #f0fdf4; 
+    border-radius: 999px; 
+    height: 22px; 
+    border: 1px solid #d1fae5; 
+    overflow: hidden; 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 0.5rem; 
+}
+
+.progressFill { 
+    height: 100%; 
+    background: #22c55e; 
+    border-radius: 999px; 
+    transition: width 0.3s; 
+}
+
+.progressBar span { 
+    position: absolute; 
+    width: 100%; 
+    text-align: center; 
+    font-size: 0.72rem; 
+    font-weight: 600; 
+    color: #0a0a0a; 
+}
+
+.uploadHint { 
+    font-size: 0.75rem; 
+    color: #9ca3af; 
+}
+
+.fileList { 
+    background: #fff; 
+    border: 0.5px solid #d1fae5; 
+    border-radius: 12px; 
+    padding: 1.25rem; 
+}
+
+.fileList h4 { 
+    font-size: 0.95rem; 
+    font-weight: 600; 
+    color: #0a0a0a; 
+    margin-bottom: 0.85rem; 
+}
+
+.fileItem { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.75rem; 
+    padding: 0.65rem 0.75rem; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: background 0.15s; 
+    border-bottom: 0.5px solid #f0fdf4; 
+}
+
+.fileItem:hover { 
+    background: #f0fdf4; 
+}
+
+.fileItem:last-child { 
+    border-bottom: none; 
+}
+
+.fileIcon { 
+    font-size: 1rem; 
+    flex-shrink: 0; 
+}
+
+.fileName { 
+    flex: 1; 
+    font-size: 0.88rem; 
+    color: #22c55e; 
+    font-weight: 500; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+.fileSize { 
+    font-size: 0.75rem; 
+    color: #9ca3af; 
+    flex-shrink: 0; 
+}
+
+.fileDate { 
+    font-size: 0.75rem; 
+    color: #9ca3af; 
+    flex-shrink: 0; 
+}
+
+.fileContentCard { 
+    background: #0a0a0a; 
+    border-radius: 12px; 
+    overflow: hidden; 
+}
+
+.fileContentHeader { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0.85rem 1.25rem; 
+    background: #1a1a1a; 
+    border-bottom: 1px solid #2a2a2a; 
+    color: #f0fdf4; 
+    font-size: 0.88rem; 
+    font-weight: 500; 
+}
+
+.fileContent { 
+    padding: 1.5rem; 
+    color: #d1fae5; 
+    font-family: 'Courier New', monospace; 
+    font-size: 0.82rem; 
+    line-height: 1.7; 
+    overflow-x: auto; 
+    white-space: pre; 
+    max-height: 600px; 
+    overflow-y: auto; 
+}
+
+.modalOverlay { 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0,0,0,0.5); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 200; 
+    padding: 1rem; 
+}
+
+.modalContent { 
+    background: #fff; 
+    border-radius: 16px; 
+    padding: 2rem;
+     width: 100%; 
+     max-width: 460px; 
+     display: flex; 
+     flex-direction: column; 
+     gap: 1rem; 
+}
+
+.modalContent h3 {
+     font-size: 1.2rem; 
+     font-weight: 600; 
+     color: #0a0a0a; 
+    }
+
+
+.formGroup { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.4rem; 
+}
+
+.formGroup label { 
+    font-size: 0.75rem; 
+    font-weight: 500; 
+    color: #374151; 
+    text-transform: uppercase; 
+    letter-spacing: 0.07em; 
+}
+
+.formGroup input, .formGroup select { 
+    width: 100%; 
+    padding: 0.7rem 1rem; 
+    border: 1.5px solid #d1fae5; 
+    border-radius: 10px; 
+    font-size: 0.9rem; 
+    font-family: inherit; 
+    color: #111; 
+    background: #f9fafb; 
+    outline: none; 
+    transition: border-color 0.2s; 
+}
+
+.formGroup input:focus, .formGroup select:focus {
+     border-color: #22c55e; 
+}
+
+.modalBtns { 
+    display: flex; 
+    gap: 0.75rem; 
+}
+
+.cancelBtn { 
+    padding: 0.75rem 1.25rem; 
+    background: transparent; 
+    border: 1.5px solid #e5e7eb; 
+    border-radius: 10px; 
+    color: #374151; 
+    font-size: 0.95rem; 
+    font-weight: 500; 
+    cursor: pointer; 
+    font-family: inherit; 
+    transition: border-color 0.2s; 
+}
+
+.cancelBtn:hover { 
+    border-color: #9ca3af; 
+}
+
+@media (max-width: 640px) {
+  .container { flex-direction: column; padding: 1rem; }
+  .sidebar { width: 100%; }
+  .uploadRow { flex-direction: column; align-items: flex-start; }
+}
